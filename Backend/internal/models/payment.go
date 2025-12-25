@@ -8,9 +8,9 @@ type Payment struct {
 	ID              uint      `json:"id" gorm:"primaryKey"`
 	ReservationID   uint      `json:"reservation_id" gorm:"not null"`
 	Amount          float64   `json:"amount" gorm:"not null"`
-	Status          string    `json:"status" gorm:"default:pending"` // pending, paid, failed, expired
-	PaymentMethod   string    `json:"payment_method"`                // credit_card, gopay, shopeepay, etc.
-	MidtransOrderID string    `json:"midtrans_order_id"`             // Order ID from Midtrans
+	Status          string    `json:"status" gorm:"default:pending"`
+	PaymentMethod   string    `json:"payment_method"`
+	MidtransOrderID string    `json:"midtrans_order_id"`
 	VaNumber        string    `json:"va_number"`
 	VaBank          string    `json:"va_bank"`
 	PaymentTime     time.Time `json:"payment_time"`
@@ -32,10 +32,10 @@ type PaymentResponse struct {
 	Status          string    `json:"status"`
 	PaymentMethod   string    `json:"payment_method"`
 	MidtransOrderID string    `json:"midtrans_order_id"`
-	VaNumber        string    `json:"va_number,omitempty"`    // Opsional untuk bank transfer
-	VaBank          string    `json:"va_bank,omitempty"`      // Opsional untuk bank transfer
-	SnapToken       string    `json:"snap_token,omitempty"`   // Tambahkan ini untuk Snap
-	RedirectURL     string    `json:"redirect_url,omitempty"` // Alternatif: redirect URL
+	VaNumber        string    `json:"va_number,omitempty"`
+	VaBank          string    `json:"va_bank,omitempty"`
+	SnapToken       string    `json:"snap_token,omitempty"`
+	RedirectURL     string    `json:"redirect_url,omitempty"`
 	PaymentTime     time.Time `json:"payment_time"`
 	CreatedAt       time.Time `json:"created_at"`
 }

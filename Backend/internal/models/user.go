@@ -9,7 +9,7 @@ type User struct {
 	Name      string    `json:"name" gorm:"not null"`
 	Email     string    `json:"email" gorm:"uniqueIndex;not null"`
 	Phone     string    `json:"phone"`
-	Password  string    `json:"-" gorm:"not null"` // Hidden from JSON
+	Password  string    `json:"-" gorm:"not null"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
